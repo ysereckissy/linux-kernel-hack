@@ -1,8 +1,8 @@
 Chap2: Building the 6.x Linux Kernel from Source -- Part 1
 -----------------------------------------------------------
 
-Useful Commands:
-----------------
+**Useful Commands:**
+
 uname -r 
 git log --date-order --tags --simplify-by-decoration --pretty=format:'%ai %h %d' 
 git clone https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git 
@@ -32,8 +32,8 @@ scripts/config --enable IKCONFIG --enable IKCONFIG_PROC
 grep IKCONFIG .config 
 scripts/get_feat.pl --arch arm64 ls --> kernel feature support matrix 
 
-Useful Links:
--------------
+**Useful Links:**
+
 https://kernelnewbies.org 
 https://kernelnewbies.org/LinuxVersions 
 https://github.com/torvalds/linux/tags 
