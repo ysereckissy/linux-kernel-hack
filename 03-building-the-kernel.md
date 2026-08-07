@@ -35,7 +35,19 @@ TMPDIR=$(mktemp -d)
 unmkinitramfs /boot/initrd.img-6.12.94 ${TMPDIR}
 tree ${TMPDIR}
 ```
+##### Customizing the Grub bootloader
+```bash
+sudo cp /etc/default/grub /etc/default/grub.orig
+sudo vim /etc/default/grub
+GRUB_TIMEOUT_STYLE=menu # comment out hidden
+sudo update-grub
+${SRC}/scripts/extract-ikconfig /boot/vmlinuz-6.12.94
+${SRC}/scripts/extract-ikconfig /boot/vmlinuz-6.12.94 | egrep "IKCONFIG|HAMRADIO|PROFILING|VBOXGUEST"
+gunzip -c /proc/config.gz | egrep "IKCONFIG|HAMRADIO|PROFILING|VBOXGUEST"
+
+```
+
 #### Useful Links
-https://linux.die.net/man/8/depmod
+https://linux.die.net/man/8/depmod  
 https://github.com/kaiwan/seals
 
